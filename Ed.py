@@ -34,3 +34,10 @@ dic = {'name':'pey', 'phone':'0119993323', 'birth':'1119'}
 dic['job'] = 'janiter'
 print(dic)
 
+del dic['job']
+print(dic)
+
+print(dic['name'])
+#print(dic['pey'])는 실행되지 않는다.
+
+
