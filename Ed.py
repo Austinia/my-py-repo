@@ -40,4 +40,46 @@ print(dic)
 print(dic['name'])
 #print(dic['pey'])는 실행되지 않는다.
 
+print(dic.keys())
+print(dic.values())
+print(dic.items())
+print('job' in dic)
+
+s1 = set([1,2,3])
+print(s1)
+s2 = set('hello')
+print(s2) # 순서x 중복x
+s3 = set([1,2,3,4,5,6])
+s4 = set([4,5,6,7,8,9])
+
+print(s3 & s4)
+print(s3 | s4)
+print(s3 - s4)
+
+s1.add(4)
+print(s1)
+s1.remove(4)
+print(s1)
+
+"""
+bool
+"""
+
+a = True
+b = False
+
+print(1 == 1)
+print(2 > 1)
+print(2 < 1)
+
+a = [1, 2, 3, 4]
+while a:#조건문이 참인 동안 조건문 안에 있는 문장을 반복해서 수행한다.
+    print(a.pop()) #pop 함수는 리스트의 마지막을 꺼내는것
+
+b = a
+print(id(a))
+print(a is b)
+a[1] = 5
+
+print(a)
 
