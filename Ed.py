@@ -145,7 +145,7 @@ a[[1]] = 'python' key의 자리에 리스트형은 오지 못함
 """
 
 # 연습문제 10
-a = {'A':90, 'B':80, 'C':70}
+a = {'A': 90, 'B': 80, 'C': 70}
 print(a.get('B'))
 
 # 연습문제 11
@@ -154,8 +154,177 @@ print(set(a))
 
 # 연습문제 12
 """
-a = b [1, 2, 3]
+a = b = [1, 2, 3]
 a[1] = 4
 print(b)
-를 했을 경우 [1, 4, 3]으로 출력 될 것이다 둘은 다른 객체가 아니기 때문.
+를 했을 경우 [1, 4, 3]으로 출력 될 것이다 두 변수는 다른 객체를 포인팅 하고 있기 때문.
 """
+
+pocket = ['paper', 'cellphone', 'money', 'card']
+money = 2000
+card = True
+if 'money' or 'card' in pocket:
+    if money >= 3000:
+        print("택시 ㄱㄱ")
+    else:
+        if 'card':
+            print('카카오택시 ㄱㄱ')
+        else:
+            pass
+else:
+    print("뚜벅이")
+
+# elif 사용
+
+if 'money' in pocket:
+    print('use your money')
+elif 'card':
+    print('get a Kakao')
+else:
+    pass
+
+# If문 한줄 정리
+
+if 'money' in pocket : pass
+else: print("use your card")
+
+# 조건부 표현식
+
+if money >= 3000:
+    message = "Enough"
+else:
+    message = "Not enough"
+print(message)
+#OR
+message = "Enough" if money >= 3000 else "Not enough"
+print(message)
+
+treeHit = 0
+while treeHit < 10:
+    treeHit = treeHit + 1
+    if treeHit > 1:
+        print("You Hit the tree %d Times" % treeHit)
+    else:
+        print("You Hit the tree %d Time" % treeHit)
+    if treeHit == 10:
+        print("You got that tree")
+
+prompt = """
+1. Add
+2. Del
+3. List
+4. Quit
+
+Enter number: """
+
+"""number = 0
+while number != 4:
+    print(prompt)
+    number = int(input())"""
+
+coffee = 10
+money = 300
+while money:
+    print("I got cash so give it to her")
+    coffee -= 1
+    if coffee == 1:
+        print("And We got only %d" % coffee)
+    else:
+        if coffee == 0:
+            print("We RuNnEd OuT!! GeT OuT oF hErE")
+            break
+        else:
+            print("And We got %d" % coffee)
+
+"""Poke = 10
+while True:
+    money = int(input("How much you Got?:"))
+    if money == 300:
+        print("Ok, That's enough to order it")
+        Poke -= 1
+        if Poke == 1:
+            print("Jimmy, we got only %d poke anyway." % Poke)
+        else:
+            if Poke == 0:
+                print("Ooh,hoo We Got that Out!, Shut that freaking Door jimmy, we're done")
+                break
+            else:
+                print("Jimmy, we got %d pokes anyway." % Poke)
+    elif money > 300:
+        print("oh, hoho, that's pretty big number to me boy, let me give you change, here %d" % (money -300))
+        Poke -= 1
+        if Poke == 1:
+            print("Jimmy, we got only %d poke anyway." % Poke)
+        else:
+            if Poke == 0:
+                print("Ooh,hoo We Got that Out!, Shut that freaking Door jimmy, we're done")
+                break
+            else:
+                print("Jimmy, we got %d pokes anyway." % Poke)
+    else:
+        print("hey my man, You ain't got anything yo, Get out of my area")
+        if Poke == 1:
+            print("Jimmy, we got only %d poke anyway." % Poke)
+        else:
+            if Poke == 0:
+                print("Ooh,hoo We Got that Out!, Shut that freaking Door jimmy, we're done")
+                break
+            else:
+                print("Jimmy, we got %d pokes anyway." % Poke)"""
+
+a = 0
+while a < 10:
+    a += 1
+    if a % 2 == 0:
+        continue
+    print(a)
+
+test_list = ['un', 'deux', 'trois']
+for i in test_list:
+    print(i)
+
+a = [(1, 2), (3, 4), (5, 6)]
+for (first, last) in a:
+    print(first + last)
+
+classes = [90, 25, 67, 45, 80]
+
+number = 0
+"""for mark in classes:
+    number += 1
+    if mark >= 60:
+        print("number %d student is passed" % number)
+    else:
+        print("number %d student is not passed" % number)
+    if mark < 60:
+        continue
+    print("number %d student congrat!" % number)"""
+
+add = 0
+for k in range(1, 11):
+    add += k
+
+print(add)
+
+for number in range(len(classes)):
+    if classes[number] < 60:
+        continue
+    print("number %d student congrat!" % (number+1))
+
+for h in range(2,10):
+    for j in range(1,10):
+        print(h*j, end=" ")
+    print('')
+
+"""a = [1,2,3,4]
+result = []
+for num in a:
+    result.append(num*3)
+print(result)"""
+
+a = [1, 2, 3, 4]
+result = [num * 3 for num in a if num % 2 == 0]
+print(result)
+""" [표현식 for 항목 in 반복가능객체 if 조건문
+ ...       for 항목 in 반복가능객체 if 조건문]"""
+
