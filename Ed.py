@@ -328,3 +328,41 @@ print(result)
 """ [표현식 for 항목 in 반복가능객체 if 조건문
  ...       for 항목 in 반복가능객체 if 조건문]"""
 
+# 연습문제 1
+# shirt
+
+# 연습문제 2
+number = 0
+result = 0
+while number < 1000:
+    number += 1
+    if (number % 3) == 0:
+        result += number
+print(result)
+
+# 연습문제 3
+star = 0
+while star < 5:
+    star += 1
+    print("*" * star)
+
+# 연습문제 4
+for r in range(1, 101):
+    print (r)
+
+# 연습문제 5
+A = [70, 60, 55, 75, 95, 90, 80, 80, 85, 100]
+result = 0
+for E in A:
+    result += E
+print(result / len(A))
+
+# 연습문제 6
+"""numbers = [1, 2, 3, 4, 5]
+result = []
+for n in numbers:
+    if n % 2 == 1:
+        result.append(n*2)"""
+numbers = [1, 2, 3, 4, 5]
+result = [n * 2 for n in numbers if n % 2 == 1]
+print(result)
