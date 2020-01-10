@@ -366,3 +366,20 @@ for n in numbers:
 numbers = [1, 2, 3, 4, 5]
 result = [n * 2 for n in numbers if n % 2 == 1]
 print(result)
+
+"""def add(a, b):
+    return a+b
+
+def add_many(*args):
+    result = 0
+    for i in args:
+        result += i
+    return result"""
+
+def add_mul(choice, *args):
+    if choice == "add":
+        result = 0
+        for i in args:
+            result += i
+
+            
