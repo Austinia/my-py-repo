@@ -381,5 +381,128 @@ def add_mul(choice, *args):
         result = 0
         for i in args:
             result += i
+    elif choice == "mul":
+        result = 1
+        for i in args:
+            result = result * i
+    return result
 
-            
+def say_myself(name, old, man=True): #초깃값 설정해 놓은 매개변수는 항상 맨뒤!
+    print("나의 이름은 %s 입니다" % name)
+    print("나의 나이는 %d살입니다" % old)
+    if man:
+        print("나는 남자입니다")
+    else:
+        print("나는 여자입니다")
+
+print(say_myself("김도윤", 26, False))
+
+a = 1
+def vartest(a):
+    a += 1
+    # return a 와 a = vartest(a)를 했으면 함수 내부에서 외부 변수 변경 가능
+vartest(3)
+print(a)
+# 함수안의 매개변수는 함수밖의 변수와 다른 것!
+# global a로 가져올 수 있는 있지만 비추천
+
+# 함수 간결하게 간단 생성시 lambda 사용
+add = lambda a, b: a+b
+result = add(3, 4)
+print(result)
+
+# 사용자입력
+# number = input("숫자를 입력하세요")
+# print(number)
+
+for i in range(10):
+    print(i, end=' ')
+
+f = open("C:/Users/Administrator/Desktop/New file.txt", 'w')
+for i in range(1, 11):
+    data = "%d번째 줄입니다.\n" % i
+    f.write(data)
+f.close()
+
+p = open("C:/Users/Administrator/Desktop/New file.txt", 'r')
+while True:
+    line = p.readline()
+    if not line: break
+    print(line)
+p.close()
+
+f = open("C:/Users/Administrator/Desktop/New file.txt", 'a')
+for i in range(11, 21):
+    data = "%d번째 줄입니다.\n" % i
+    f.write(data)
+f.close()
+
+"""with opern("foo,txt, 'w') as f:
+    f.write("THUG LIFE")"""
+# f.close() 하지 않아도 with함수를 벗어나면 닫힘
+
+# 연습문제 1
+def is_odd(a):
+    if (a % 2) == 0:
+        return "짝수"
+    else:
+        return "홀수"
+
+print(is_odd(2))
+
+# 연습문제 2
+def aver(*args):
+    result = 0
+    for w in args:
+        result += w
+    result = result / len(args)
+
+# 연습문제 3
+"""input1 = int(input("첫번째 숫자를 입력하세요:"))
+input2 = int(input("두번째 숫자를 입력하세요:"))
+"""
+# total = input1 + input2
+# print("두 수의 합은 %s 입니다" % total)
+
+# 연습문제 4
+"""
+print("you" "need" "python")
+print("you"+"need"+"python")
+print("you", "need", "python") 이것만 츨력 값이 다름
+print("".join(["you", "need", "python"]))"""
+
+# 연습문제 5
+
+"""f1 = open("test.txt", 'w')
+f1.write("life is too short")
+f1.close()
+f2 = open("test.txt", 'r')
+print(f2.read())"""
+
+# 연습문제 6
+
+"""f1 = open("test.txt", 'a')
+f1.write(input())
+f1.close()
+f2 = open("test.txt", 'r')
+print(f2.read())"""
+
+# 연습문제 7
+f1 = open("test.txt", 'w')
+f1.write("life is too short\nyou need java")
+f1.close()
+
+f2 = open("test.txt", 'r')
+print(f2.read())
+data = f2.read()
+f2.close()
+
+data = data.replace("java", "python")
+
+f3 = open("test.txt", 'w')
+f3.write(data)
+f3.close()
+
+f4 = open("test.txt", 'r')
+print(f4.read())
+f4.close()
