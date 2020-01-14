@@ -488,7 +488,7 @@ f2 = open("test.txt", 'r')
 print(f2.read())"""
 
 # 연습문제 7
-f1 = open("test.txt", 'w')
+"""f1 = open("test.txt", 'w')
 f1.write("life is too short\nyou need java")
 f1.close()
 
@@ -505,4 +505,140 @@ f3.close()
 
 f4 = open("test.txt", 'r')
 print(f4.read())
-f4.close()
+f4.close()"""
+
+class FourCal:
+    def __init__(self, first, second):
+        self.first = first
+        self.second = second
+    def add(self):
+        result = self.first + self.second
+        return result
+    def mul(self):
+        result= self.first * self.second
+        return result
+    def sub(self):
+        result = self.first - self.second
+        return  result
+    def div(self):
+        result = self.first / self.second
+        return result
+
+a = FourCal(4, 2)
+b = FourCal(3, 7)
+print(type(a))
+#a.setdata(4, 2)
+#b.setdata(3, 7)
+print(a.first)
+print(a.second)
+print(b.first)
+
+print(a.add())
+print(a.sub())
+print(a.mul())
+print(a.div())
+
+class MoreFourCal(FourCal):
+    def pow(self):
+        result = self.first ** self.second
+        return  result
+
+a = MoreFourCal(4, 2)
+print(a.add())
+print(a.pow())
+
+class SafeFourCal(FourCal):
+    def div(self):
+        if self.second == 0:
+            return 0
+        else:
+            return self.first / self.second
+
+b = SafeFourCal(4, 0)
+print(b.div())
+print(b.add())
+
+import mod1
+print(mod1.add(3, 4))
+
+from mod1 import add, sub
+print(add(3, 4))
+
+import mod2
+a = mod2.Math()
+print(a.solv(2))
+
+"""from game.sound.echo import echo_test
+echo_test()"""
+
+from game.sound import *
+echo.echo_test()
+
+from game.graphic.render import render_test
+render_test()
+
+try:
+    a = [1, 2]
+    print(a[3])
+    4 / 0
+except (ZeroDivisionError, IndexError) as e:
+    print(e)
+
+class Bird:
+    def fly(self):
+        raise NotImplementedError
+
+class Eagle(Bird):
+    def fly(self):
+        print("very fast")
+
+eagle = Eagle()
+eagle.fly()
+
+class MyError(Exception):
+    def __str__(self):
+        return "허용되지 않는 별명입니다."
+
+def say_nick(nick):
+    if nick == '바보':
+        raise MyError()
+    print(nick)
+
+try:
+    say_nick("천사")
+    say_nick("바보")
+except MyError as e:
+    print(e)
+
+import sys
+print(sys.argv)
+
+import os
+os.environ
+
+os.system("dir")
+
+f = os.popen("dir")
+print(f.read())
+
+import time
+print(time.ctime())
+import calendar
+print(calendar.calendar(2020))
+print(calendar.weekday(2020, 1, 14))
+import random
+print(random.randint(1, 100))
+
+def random_pop(data):
+    number = random.randint(0, len(data)-1)
+    return data.pop(number)
+
+if __name__ == "__main__":
+    data = [1, 2, 3, 4, 5]
+    while data:
+        print(random_pop(data))
+
+# import webbrowser
+# webbrowser.open_new("https://wikidocs.net/33")
+
+# 5장 외장 함수까지 끝
