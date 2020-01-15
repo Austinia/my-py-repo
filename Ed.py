@@ -642,3 +642,105 @@ if __name__ == "__main__":
 # webbrowser.open_new("https://wikidocs.net/33")
 
 # 5장 외장 함수까지 끝
+
+# 연습문제 1
+
+class Calculator:
+    def __init__(self):
+        self.value = 0
+
+    def add(self, val):
+        self.value += val
+
+class UpgradeCalcultor(Calculator):
+    def minus(self, val):
+        self.value -= val
+
+# cal = UpgradeCalcultor()
+# cal.add(10)
+# cal.minus(7)
+
+# print(cal.value)
+
+# 연습문제 2
+
+class MaxLimitCalculator(Calculator):
+    def add(self, val):
+        if self.value <= 100:
+            self.value = 100
+
+cal = MaxLimitCalculator()
+cal.add(50)
+cal.add(60)
+
+print(cal.value)
+
+# 연습문제 3
+
+all([1, 2, abs(-3)-3])  # false, abs = 절댓값
+
+chr(ord('a')) == 'a' # true, chr = 아스키코드 -> 문자, ord = 문자 -> 아스키코드
+
+# 연습문제 4
+
+def positive(x):
+    return x > 0
+
+print(list(filter(positive, [1, -2, 3, -5, 8, -3])))  # filter 결과값들을 걸러준다
+
+# 연습문제 5
+
+print(int(0xea))
+
+# 연습문제 6
+
+print(list(map(lambda a: a*3, [1, 2, 3, 4])))  # map 함수와 반복 가능한 자료형을 받고 그 결과를 묶어서 반환
+
+# 연습문제 7
+
+print(max([-8, 2, 7, 5, -3, 5, 0, 1]))
+print(min([-8, 2, 7, 5, -3, 5, 0, 1]))
+
+# 연습문제 8
+
+print(round((17 / 3), 4))
+
+# 연습문제 9
+
+import sys
+a = sys.argv[1:]
+result = 0
+for i in a:
+    result += int(i)
+print(result)
+
+# 연습문제 10
+
+import os
+os.chdir("C:/Users/Administrator/Documents/Git/my-py-repo")
+result = os.popen("dir")
+print(result.read())
+
+# 연습문제 11
+
+import glob
+result = glob.glob("C:/Users/Administrator/Documents/Git/my-py-repo/*.py")
+print(result)
+
+# 연습문제 12
+
+print(time.strftime('%c', time.localtime(time.time())))
+
+# 연습문제 13
+
+def random_pop(data):
+    number = random.randint(0, len(data)-1)
+    return data.pop(number)
+
+if __name__ == "__main__":
+    data = list(range(1, 45))
+    while data:
+        if len(data) == 38:
+            break
+        else:
+            print(random_pop(data))
