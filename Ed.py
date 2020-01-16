@@ -744,3 +744,70 @@ if __name__ == "__main__":
             break
         else:
             print(random_pop(data))
+
+# 연습문제 1
+
+a = "a:b:c:d"
+a = a.split(':')
+a = '#'.join(a)
+print(a)
+
+# 연습문제 2
+
+a = {'A': 90, 'B': 80}
+a['C'] = 70
+print(a)
+
+# 연습문제 3
+
+a = [1, 2, 3]
+a = a + [4, 5]
+print(a)
+# a.extend([4, 5]) 와 동일하다
+
+# 연습문제 4
+A = [20, 55, 67, 82, 45, 33, 90, 87, 100, 25]
+result = 0
+for i in A:
+    if i >= 50:
+        result += i
+print(result)
+
+# 연습문제 5
+
+# a = int(input())
+a = 90
+b = 1
+c = 0
+d = (c, b)
+f = 0
+result = 0
+while result < a:
+    result = b + c
+    if result > a:
+        break
+    else:
+        c = b
+        b = result
+        f = (result,)
+        d = d + f
+print(d)
+
+# 연습문제 6
+
+'''a = input("숫자를 입력하세요: ")
+b = a.slpit(",")
+result = 0
+print(b)
+for i in b:
+    result += int(i)
+print(result)'''
+# 풀이를 봐도 똑같던데 실행이 안된다. 문자열에 스플릿 할 수 없는데 어떡하지
+
+# 연습문제 7
+
+a = int(input("몇 단의 구구단을 보고싶습니까?: "))
+for i in range(1, 10):
+    print((i * a), end=' ')
+
+# 연습문제 8
