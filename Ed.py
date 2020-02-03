@@ -806,8 +806,45 @@ print(result)'''
 
 # 연습문제 7
 
-a = int(input("몇 단의 구구단을 보고싶습니까?: "))
+'''a = int(input("몇 단의 구구단을 보고싶습니까?: "))
 for i in range(1, 10):
-    print((i * a), end=' ')
+    print((i * a), end=' ')'''
 
 # 연습문제 8
+
+v1 = open("abc.txt", 'w')
+v1.write("AAA\nBBB\nCCC\nDDD\nEEE\n")
+v1.close()
+
+v2 = open("abc.txt", 'r')
+print(v2.read())
+v2.close()
+
+v3 = open("abc.txt", 'w')
+v3.write("EEE\nDDD\nCCC\nBBB\nAAA\n324")
+v3.close()
+
+v4 = open("abc.txt", 'r')
+print(v4.read())
+v4.close()
+
+# 연습문제 9
+'''
+d1 = open("sample.txt", 'w')
+d1.write("70 60 55 75 95 90 80 80 85 100")
+d1.close()
+
+d2 = open("sample.txt", 'r')
+result = d2.read()
+result = tuple(result)
+max = 0
+aver = 0
+for i in result:
+    max += int(i)
+print(max)
+aver = max / len(result)
+print(aver)
+d2.close()
+'''
+
+# 연습문제 10
